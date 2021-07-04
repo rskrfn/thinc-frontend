@@ -1,13 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+:root {
+  --primary-blue: rgba(87, 132, 186, 1);
+  --primary-red: rgba(255, 19, 19, 1);
+  --primary-green: rgba(87, 186, 97, 1);
+  --secondary-blue: rgba(210, 222, 237, 1);
+  --secondary-text: rgba(131, 127, 143, 1);
+  --tertiary-text: rgba(151, 151, 151, 1);
+  --background-blue: rgba(230, 237, 246, 1);
+  --background-modal-primary: rgba(230, 237, 246, 0.75);
+  --background-modal: rgba(0, 0, 0, 0.75);
+  --ongoing-text: rgba(87, 132, 186, 1);
+  --ongoing-background: rgba(210, 222, 237, 1);
+  --completed-text: rgba(89, 186, 87, 1);
+  --completed-background: rgba(212, 237, 210, 1);
+  --unfinished-text: rgba(186, 87, 87, 1);
+  --unfinished-background: rgba(237, 210, 210, 1);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-blue);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

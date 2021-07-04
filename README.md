@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/rskrfn/thinc-frontend">
+    <img src="public/logo192.png" alt="Logo" width="90" height="90">
+  </a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <h3 align="center">Thinc</h3>
 
-## Available Scripts
+  <p align="center">
+    This project is the front-end from our assignment of building online based class implementing React.js and Express.
+    <br />
+    <a href="https://thinc.arifani.id">View Deployed App</a>
+    <br />
+    (Under Development)
+  </p>
+</p>
 
-In the project directory, you can run:
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">Contents</h2></summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contact">Contact</a></li>
 
-### `npm start`
+  </ol>
+</details>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<!-- ABOUT THE PROJECT -->
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## About The Project
 
-### `npm test`
+This project is the front-end from our assignment of building online based class implementing React.js and Express.
+Assigned by Arkademy to Fullstack Mobile 21 Class.
+This project is a step for us to become a fullstack mobile developer.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Built With
 
-### `npm run build`
+- [Express](https://expressjs.com/)
+- [React](https://reactjs.org/docs/create-a-new-react-app.html)
+- [React Router](https://reactrouter.com/web/guides/quick-start)
+- [Axios](https://www.npmjs.com/package/axios)
+- [HTML](https://www.w3schools.com/html/)
+- [CSS](https://www.w3schools.com/w3css/defaulT.asp)
+- [Javascript](https://www.w3schools.com/js/DEFAULT.asp)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- GETTING STARTED -->
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To get a local copy up and running follow these simple steps.
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Things you need to install
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- npm
+  ```sh
+  npm install npm@latest -g
+  ```
+- react
+  ```sh
+  npx create-react-app (directory)
+  ```
+- react-router-dom
+  ```sh
+  npm i react-router-dom
+  ```
+- axios
+  ```sh
+  npm i axios
+  ```
+- bootstrap
+  ```sh
+  npm i bootstrap
+  ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Installation
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Clone the repo
+   ```sh
+   git clone https://github.com/rskrfn/thinc-frontend.git
+   ```
+      <!-- ROADMAP -->
+## Roadmap
 
-## Learn More
+This project is our learning step to become a fullstack mobile developer.
+Should be adding more features and continuous improvement on a weekly basis until this project is done.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<!-- CONTACT -->
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contact
 
-### Code Splitting
+Riski Arifani - [arifaniriski@gmail.com](https://mail.google.com/mail/u/0/?fs=0&to=arifaniriski@gmail.com&su=Thinc+website&tf=cm)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Project Link: [https://github.com/rskrfn/thinc-frontend](https://github.com/rskrfn/thinc-frontend)

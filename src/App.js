@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { Switch } from "react-router-dom";
+import {
+//   PrivateRoute,
+  PrivateRouteAuth,
+} from "./services/routing/PrivateRouting";
+import { useSelector } from "react-redux";
+
+// import Login from "./pages/auth/login/Login";
+import Maintenance from "./pages/maintenance/Maintenance";
 
 function App() {
+  const user = useSelector((state) => state.loginReducers);
+  console.log("app", user);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Switch>
+      <PrivateRouteAuth path="/" exact component={Maintenance} />
+    </Switch>
   );
 }
 
