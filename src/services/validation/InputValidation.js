@@ -4,6 +4,9 @@ export const nameValidation = (input) => {
   if (input.length === 0) {
     return "Name cannot be empty";
   }
+  if(input.length > 14){
+    return "Username must be under 15 characters"
+  }
   if (!reg.test(input)) {
     return "Name cannot contain number and special characters";
   }
@@ -69,14 +72,7 @@ export const usernameValidation = (input) => {
 
 export const usernameemailValidation = (input) => {
   let reg =
-    /^(?:[A-Z\d][A-Z\d_-]{3,9}|[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4})$/i;
-
-  // console.log('cektype', typeof(input), {input});
-  // let inputCheck = input.includes("@");
-
-  //   if (input.length < 4 && !input.includes("@")) {
-  //     return "Username must be at least 4 characters";
-  //   }
+    /^(?:[A-Z\d][A-Z\d_-]{3,14}|[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4})$/i;
   if (!reg.test(input) && !input.includes("@") && input.length < 4) {
     return "Username must be at least 4 characters";
   }
@@ -88,8 +84,8 @@ export const usernameemailValidation = (input) => {
   ) {
     return "Username can only contain letter, number, '-' or '_'";
   }
-  if (!reg.test(input) && !input.includes("@") && input.length > 10) {
-    return "Username must be under 10 characters";
+  if (!reg.test(input) && !input.includes("@") && input.length > 14) {
+    return "Username must be under 15 characters";
   }
   if (!reg.test(input) && input.includes("@")) {
     return "Wrong email format";

@@ -58,7 +58,7 @@ function Login(props) {
     }
   }, [props.loginReducers]);
 
-  console.log("props", props);
+  // console.log("props", props);
   return (
     <>
       <ToastContainer pauseOnFocusLoss={false} />
