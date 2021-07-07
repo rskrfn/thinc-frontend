@@ -1,0 +1,40 @@
+.maincontainer {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 50%;
+  height: 100%;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}
+.content {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+.header {
+  margin: 0;
+  font-family: "kanit";
+  font-weight: 500;
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 2rem;
+}
+.icon {
+  height: 200px;
+  width: 200px;
+  margin-bottom: 2rem;
+}
+a:link {
+  text-decoration: none;
+}
+.link {
+  font-family: "kanit";
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: white;
+}

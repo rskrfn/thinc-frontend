@@ -17,7 +17,12 @@
   --unfinished-text: rgba(186, 87, 87, 1);
   --unfinished-background: rgba(237, 210, 210, 1);
 }
-
+a:link {
+  text-decoration: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",

@@ -1,0 +1,129 @@
+.maincontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  /* height: fit-content; */
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.header {
+  text-align: center;
+  font-family: "kanit";
+  font-weight: 500;
+  font-size: 48px;
+  color: black;
+}
+.header2 {
+  text-align: center;
+  font-family: "kanit";
+  font-weight: 500;
+  font-size: 24px;
+  color: black;
+}
+.helper {
+  text-align: center;
+  font-family: "kanit";
+  font-weight: 400;
+  font-size: 20px;
+  color: rgba(131, 127, 143, 1);
+  margin-bottom: 10%;
+}
+.formgroup {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+.input {
+  display: block;
+  width: 5rem;
+  height: 4rem;
+  font-family: "kanit", sans-serif;
+  font-size: xx-large;
+  font-weight: 700;
+  text-align: center;
+  outline: lightskyblue;
+  border: none;
+  border-bottom: 3px solid black;
+}
+.input:focus {
+  border-bottom: 3px solid #5784ba;
+}
+.resend {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  font-family: "kanit", sans-serif;
+  font-size: 16px;
+  color: #837f8f;
+}
+.resendbtn {
+  padding-left: 10px;
+  color: #5784ba;
+  text-decoration: none;
+}
+
+.sendbtn {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  width: 100%;
+  margin-top: 2rem;
+  background-color: #5784ba;
+  font-family: "Kanit", sans-serif;
+  font-size: larger;
+  color: white;
+  border-radius: 7px;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 2rem;
+}
+.sendbtn:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #7ea2ce;
+}
+
+@media (max-width: 768px) {
+  .formgroup {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  .input {
+    width: 3.5rem;
+  }
+  .header {
+    font-size: 32px;
+  }
+  .header2 {
+    font-size: 20px;
+  }
+  .helper {
+    font-size: 16px;
+  }
+}
+@media (max-width: 425px) {
+  .maincontainer {
+    height: 100%;
+  }
+  .content {
+    height: fit-content;
+    margin-top: -5rem;
+    justify-content: center;
+  }
+}

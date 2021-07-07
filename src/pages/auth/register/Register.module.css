@@ -19,16 +19,6 @@
   margin-bottom: 6rem;
 }
 
-.forgotpassword {
-  display: flex;
-  align-self: flex-end;
-  font-size: 1.1rem;
-  font-weight: 500;
-  font-family: "Roboto", sans-serif;
-  color: black;
-  margin-bottom: 10%;
-}
-
 .buttongroup {
   display: flex;
   flex-direction: column;

@@ -1,11 +1,9 @@
 import axios from "axios";
 
-const API_URL = process.env.API_URL;
-
 export function loginAction(data) {
   let config = {
     method: "POST",
-    url: `${API_URL}/users/login`,
+    url: `${process.env.REACT_APP_API_URL}/users/login`,
     data: data,
   };
   return (dispatch) => {
@@ -24,7 +22,7 @@ export function loginAction(data) {
       });
   };
 }
-export function logoutHandler() {
+export function logoutAction() {
   return (dispatch) => {
     dispatch({ type: "LOGOUT" });
   };
