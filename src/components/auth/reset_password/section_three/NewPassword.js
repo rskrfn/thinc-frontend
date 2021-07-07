@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import classes from "./NewPassword.module.css";
 import InputComponent from "../input/InputComponent";
@@ -8,7 +9,7 @@ import axios from "axios";
 import Modal from "../modal/Modal";
 
 function NewPassword(props) {
-  const { setSection, setIconSection, resetData, setResetData } = props;
+  const { setIconSection, resetData, setResetData } = props;
   const [repeat, setRepeat] = useState("");
   const [warning, setWarning] = useState({
     newpasswordwarning: "",

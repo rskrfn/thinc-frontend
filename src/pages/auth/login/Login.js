@@ -45,7 +45,7 @@ function Login(props) {
   };
 
   useEffect(() => {
-    const { isRejected, isLoggedIn, err } = props.loginReducers;
+    const { err } = props.loginReducers;
     // console.log("logincek", err);
     if (err.data?.message === "Incorrect Email or Password") {
       return toast.error("Incorrect email or password", {
