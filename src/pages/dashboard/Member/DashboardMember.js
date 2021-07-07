@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import classes from "./DashboardMember.module.css";
 import Sidebar from "../../../components/sidebar/Sidebar";
+import Message from "../../../components/dashboard/messages/Message";
+import FloatButton from "../../../components/dashboard/component/message_floating/FloatButton";
 
 function DashboardMember() {
   const [section, setSection] = useState(1);
@@ -14,9 +16,10 @@ function DashboardMember() {
           <p>Dashboard Member</p>
         </section>
         <section className={classes.messagebar}>
-          <p>Message</p>
+          <Message />
         </section>
       </div>
+      <FloatButton className={classes.floatbtn} />
     </main>
   );
 }

@@ -1,19 +1,17 @@
 import React from "react";
 import classes from "./Modal.module.css";
-import { useHistory } from "react-router-dom";
 
 import { logoutAction } from "../../../redux/ActionCreators/Login";
 import { connect } from "react-redux";
 
 function Modal(props) {
   const { setModal } = props;
-  let history = useHistory();
 
   const logoutHandler = () => {
     props.onLogoutHandler();
   };
 
-//   console.log("modal", props);
+  //   console.log("modal", props);
   return (
     <>
       <main className={classes.maincontainer}>

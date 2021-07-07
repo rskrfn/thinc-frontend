@@ -1,0 +1,22 @@
+.btn {
+  display: none;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-blue);
+  border-radius: 100%;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: rgb(145, 180, 223);
+}
+
+@media (max-width: 1100px) {
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 1rem;
+    right: 1rem;
+  }
+}

@@ -10,8 +10,8 @@ function Profile() {
         <section className={classes.sidebar}>
           <Sidebar section={section} setSection={setSection} />
         </section>
-        <section className={classes.setting}>
-          <p>Setting page</p>
+        <section className={classes.profile}>
+          <p>Profile page</p>
         </section>
       </div>
     </main>

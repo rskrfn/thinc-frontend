@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import classes from "./Sidebar.module.css";
 import { useSelector } from "react-redux";
@@ -23,8 +24,6 @@ function Sidebar(props) {
   const [profile, setProfile] = useState("");
   const [modal, setModal] = useState(false);
 
-  const logoutHandler = () => {};
-
   const getProfile = () => {
     let config = {
       method: "GET",
@@ -45,8 +44,6 @@ function Sidebar(props) {
   useEffect(() => {
     getProfile();
   }, []);
-
-  //   useEffect(() => {}, []);
 
   console.log("props", props);
   return (
