@@ -20,12 +20,8 @@
   min-width: 14rem;
   height: 100%;
 }
-.dashboard {
+.help {
   margin: 0;
-  width: 50%;
-  height: 100%;
-}
-.messagebar {
-  width: 30%;
+  width: 80%;
   height: 100%;
 }
