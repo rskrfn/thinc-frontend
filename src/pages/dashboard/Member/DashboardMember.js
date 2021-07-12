@@ -3,6 +3,7 @@ import classes from "./DashboardMember.module.css";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import Message from "../../../components/dashboard/messages/Message";
 import FloatButton from "../../../components/dashboard/component/message_floating/FloatButton";
+import DashboardLayout from "../../../components/dashboard/DashboardLayout";
 
 function DashboardMember() {
   const [section, setSection] = useState(1);
@@ -13,7 +14,7 @@ function DashboardMember() {
           <Sidebar section={section} setSection={setSection} />
         </section>
         <section className={classes.dashboard}>
-          <p>Dashboard Member</p>
+          <DashboardLayout />
         </section>
         <section className={classes.messagebar}>
           <Message />

@@ -1,0 +1,67 @@
+.maincontainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+.dateselector {
+  display: flex;
+  width: calc(100% - 4rem);
+  flex-direction: row;
+  margin-top: 1rem;
+  justify-content: space-between;
+}
+.weekdates {
+  display: flex;
+  flex-direction: row;
+}
+.itemcontainer {
+  display: flex;
+  flex-direction: column;
+  width: 2.5rem;
+  height: 5rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.itemcontaineractive {
+  display: flex;
+  flex-direction: column;
+  width: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-blue);
+  border-radius: 30px;
+  cursor: pointer;
+}
+.dayname {
+  margin: 0;
+  padding-bottom: 8px;
+  font-family: "Kanit";
+  font-weight: 400;
+  font-size: 20px;
+  color: rgba(152, 152, 152, 1);
+}
+.daynameactive {
+  margin: 0;
+  padding-bottom: 8px;
+  font-family: "Kanit";
+  font-weight: 400;
+  font-size: 20px;
+  color: white;
+}
+.date {
+  margin: 0;
+  font-family: "Kanit";
+  font-weight: 400;
+  font-size: 20px;
+  color: black;
+}
+.dateactive {
+  margin: 0;
+  font-family: "Kanit";
+  font-weight: 400;
+  font-size: 20px;
+  color: white;
+}

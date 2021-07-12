@@ -20,15 +20,13 @@ function Message() {
         <section className={classes.messagelist}>
           {MessageData.map((item, index) => {
             return (
-              <div className={classes.messagecontainer}>
+              <div className={classes.messagecontainer} key={index}>
                 <div className={classes.leftcontent}>
                   <div className={classes.imagecontainer}>
                     <img className={classes.image} src={item.dp} alt="" />
                   </div>
                   <div className={classes.middlecontent}>
-                    <p className={classes.messagename}>
-                      {item.name}
-                    </p>
+                    <p className={classes.messagename}>{item.name}</p>
                     <p className={classes.messagecontent}>
                       {item.content.length > 36
                         ? item.content.slice(0, 36) + "..."

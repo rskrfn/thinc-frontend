@@ -45,7 +45,7 @@ function Sidebar(props) {
     getProfile();
   }, []);
 
-  console.log("props", props);
+  // console.log("props", props);
   return (
     <>
       {modal ? <Modal setModal={setModal} /> : null}
@@ -175,12 +175,16 @@ function Sidebar(props) {
                 ? classes.logoutsectionprofile
                 : classes.logoutsection
             }
-            onClick={() => {
-              setModal(true);
-            }}
           >
             <img className={classes.sidebaricons} src={LogoutIcon} alt="" />
-            <p className={classes.logout}>Logout</p>
+            <p
+              onClick={() => {
+                setModal(true);
+              }}
+              className={classes.logout}
+            >
+              Logout
+            </p>
           </section>
         </div>
       </aside>

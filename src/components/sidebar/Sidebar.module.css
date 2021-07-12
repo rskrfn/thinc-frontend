@@ -36,14 +36,14 @@
   padding-bottom: 5rem;
   cursor: pointer;
 }
-.profilesection:hover {
+/* .profilesection:hover {
   display: flex;
   flex-direction: column;
   padding: 1rem;
   background-color: white;
   border-radius: 20px 20px 0 0;
   padding-bottom: 5rem;
-}
+} */
 .notificoncontainer {
   display: flex;
   flex-direction: column;
@@ -100,10 +100,10 @@
   font-weight: 400;
   color: rgba(32, 32, 32, 1);
 }
-.profilesection:hover .name,
+/* .profilesection:hover .name,
 .profilesection:hover .status {
   color: rgba(32, 32, 32, 1);
-}
+} */
 .sidebaricons {
   margin-right: 1rem;
   width: 32px;

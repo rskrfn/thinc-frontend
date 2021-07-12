@@ -1,0 +1,87 @@
+.maincontainer {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 2rem);
+  width: 100%;
+  margin-top: 1rem;
+}
+.content {
+  width: 100%;
+  height: fit-content;
+  overflow: scroll;
+}
+.newssection {
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  background-color: white;
+  overflow: hidden;
+}
+.newsheader {
+  margin: 0;
+  height: 50px;
+  margin-left: 2rem;
+  margin-top: 1rem;
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.schedulesection {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  border-radius: 20px;
+  background-color: white;
+}
+.scheduleheadercontainer {
+  display: flex;
+  height: fit-content;
+  width: calc(100% - 4rem);
+  margin: 2rem 2rem 0 2rem;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.scheduleheader {
+  margin: 0;
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 24px;
+}
+.datepicker {
+  display: none;
+}
+.datepickerbtn {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+.scheduletabcontainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+.scheduletab {
+  margin: 1rem;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  color: rgba(173, 169, 187, 1);
+  cursor: pointer;
+}
+.scheduletabactive {
+  margin: 1rem;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--primary-blue);
+  cursor: pointer;
+}
+.scheduletab:hover {
+  color: var(--primary-blue);
+}
