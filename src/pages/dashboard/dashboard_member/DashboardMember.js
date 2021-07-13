@@ -1,22 +1,22 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
-import classes from "./DashboardLayout.module.css";
+import classes from "./DashboardMember.module.css";
 import axios from "axios";
 import moment from "moment";
 import { DatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 import { ThemeProvider } from "@material-ui/styles";
 import { createTheme } from "@material-ui/core/styles";
 import MomentUtils from "@date-io/moment";
-import CalendarIcon from "../../assets/icons/icon_calendar.png";
+import CalendarIcon from "../../../assets/icons/icon_calendar.png";
 import { useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 
-import News from "./component/news/News";
-import WeekPicker from "./component/week_picker/WeekPicker";
-import AllSchedule from "./component/schedule/all_schedule/AllSchedule";
-import ForYou from "./component/schedule/for_you/ForYou";
+import News from "../../../components/dashboard/component/news/News";
+import WeekPicker from "../../../components/dashboard/component/week_picker/WeekPicker";
+import AllSchedule from "../../../components/dashboard/component/schedule/all_schedule/AllSchedule";
+import ForYou from "../../../components/dashboard/component/schedule/for_you/ForYou";
 
-function DashboardLayout() {
+function DashboardMember() {
   const [newsData, setNewsData] = useState();
   const [datePicker, setDatePicker] = useState(false);
   const [date, setDate] = useState(new Date());
@@ -242,4 +242,4 @@ function DashboardLayout() {
   );
 }
 
-export default DashboardLayout;
+export default DashboardMember;

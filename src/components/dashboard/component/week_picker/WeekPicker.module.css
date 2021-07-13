@@ -25,6 +25,9 @@
   border-radius: 30px;
   cursor: pointer;
 }
+.itemcontainer:hover {
+  background-color: rgba(92, 92, 92, 0.185);
+}
 .itemcontaineractive {
   display: flex;
   flex-direction: column;
@@ -34,6 +37,9 @@
   background-color: var(--primary-blue);
   border-radius: 30px;
   cursor: pointer;
+}
+.itemcontaineractive:hover {
+  background-color: rgb(131, 168, 212);
 }
 .dayname {
   margin: 0;

@@ -13,17 +13,8 @@ import Login from "./pages/auth/login/Login";
 import Register from "./pages/auth/register/Register";
 import ResetPassword from "./pages/auth/reset_password/ResetPassword";
 
-// dashboard pages
-import DashboardSwitch from "./services/routing/Dashboard";
-
-// activity pages
-import Activity from "./pages/activity/Activity";
-
-// profile pages
-import Profile from "./pages/profile/Profile";
-
-// help pages
-import Help from "./pages/help/Help";
+// main page
+import HomeSwitch from "./services/routing/Home";
 
 function App() {
   const user = useSelector((state) => state.loginReducers);
@@ -40,12 +31,7 @@ function App() {
         exact
         child={ResetPassword}
       />
-      <PrivateRoute
-        user={user}
-        path="/dashboard"
-        exact
-        child={DashboardSwitch}
-      />
+      <PrivateRoute user={user} path="/home" exact child={HomeSwitch} />
       {/* <PrivateRoute user={user} path="/activity" exact child={Activity} />
       <PrivateRoute user={user} path="/profile" exact child={Profile} />
       <PrivateRoute user={user} path="/help" exact child={Help} /> */}

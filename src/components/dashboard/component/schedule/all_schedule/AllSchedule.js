@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./AllSchedule.module.css";
-import ScheduleContent from "../../schedule_content/ScheduleContent";
+import ScheduleContent from "../../schedule_content/member/ScheduleContent";
 
 function AllSchedule(props) {
   const { data, loading } = props;

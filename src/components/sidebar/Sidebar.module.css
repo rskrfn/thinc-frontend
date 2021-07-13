@@ -38,14 +38,6 @@
   padding-bottom: 5rem;
   cursor: pointer;
 }
-/* .profilesection:hover {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  background-color: white;
-  border-radius: 20px 20px 0 0;
-  padding-bottom: 5rem;
-} */
 .notificoncontainer {
   display: flex;
   flex-direction: column;
@@ -102,10 +94,6 @@
   font-weight: 400;
   color: rgba(32, 32, 32, 1);
 }
-/* .profilesection:hover .name,
-.profilesection:hover .status {
-  color: rgba(32, 32, 32, 1);
-} */
 .sidebaricons {
   margin-right: 1rem;
   width: 32px;
@@ -125,7 +113,6 @@
   font-size: 16px;
   color: rgba(32, 32, 32, 1);
 }
-
 .dashboardsection {
   transform: translateY(-1rem);
   display: flex;
@@ -138,7 +125,6 @@
   padding-bottom: 5rem;
   cursor: pointer;
 }
-
 .dashboardsectionactive {
   transform: translateY(-1rem);
   display: flex;
