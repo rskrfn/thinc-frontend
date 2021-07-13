@@ -52,7 +52,7 @@ function Sidebar(props) {
       <aside className={classes.sidebar}>
         <div className={classes.content}>
           <Link
-            to="/profile"
+            // to="/profile"
             className={
               section === 0
                 ? classes.profilesectionactive
@@ -94,7 +94,7 @@ function Sidebar(props) {
             </p>
           </Link>
           <Link
-            to="/dashboard"
+            // to="/dashboard"
             className={
               section === 1
                 ? classes.dashboardsectionactive
@@ -118,7 +118,7 @@ function Sidebar(props) {
             </p>
           </Link>
           <Link
-            to="/activity"
+            // to="/activity"
             className={
               section === 2
                 ? classes.activitysectionactive
@@ -144,7 +144,7 @@ function Sidebar(props) {
             </p>
           </Link>
           <Link
-            to="/help"
+            // to="/help"
             className={
               section === 3
                 ? classes.sectionactive

@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 function DashboardSwitch() {
   const userData = useSelector((state) => state.loginReducers);
-  console.log(userData);
+  // console.log(userData);
   return userData.data.data?.role === "Facilitator" ? (
     <DashboardFacilitator />
   ) : (

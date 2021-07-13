@@ -7,9 +7,6 @@ function Profile() {
   return (
     <main className={classes.maincontainer}>
       <div className={classes.content}>
-        <section className={classes.sidebar}>
-          <Sidebar section={section} setSection={setSection} />
-        </section>
         <section className={classes.profile}>
           <p>Profile page</p>
         </section>

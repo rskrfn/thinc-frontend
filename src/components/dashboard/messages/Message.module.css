@@ -1,5 +1,4 @@
 .maincontainer {
-  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -132,4 +131,10 @@
   font-size: 14px;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+@media (max-width: 1100px) {
+  .maincontainer {
+    display: none;
+  }
 }

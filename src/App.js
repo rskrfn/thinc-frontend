@@ -46,9 +46,9 @@ function App() {
         exact
         child={DashboardSwitch}
       />
-      <PrivateRoute user={user} path="/activity" exact child={Activity} />
+      {/* <PrivateRoute user={user} path="/activity" exact child={Activity} />
       <PrivateRoute user={user} path="/profile" exact child={Profile} />
-      <PrivateRoute user={user} path="/help" exact child={Help} />
+      <PrivateRoute user={user} path="/help" exact child={Help} /> */}
     </Switch>
   );
 }

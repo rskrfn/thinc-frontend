@@ -7,9 +7,6 @@ function Activity() {
   return (
     <main className={classes.maincontainer}>
       <div className={classes.content}>
-        <section className={classes.sidebar}>
-          <Sidebar section={section} setSection={setSection} />
-        </section>
         <section className={classes.activity}>
           <p>Activity Page</p>
         </section>
