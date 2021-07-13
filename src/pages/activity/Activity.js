@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import classes from "./Activity.module.css";
-import Sidebar from "../../components/sidebar/Sidebar";
 
 function Activity() {
-  const [section, setSection] = useState(2);
   return (
     <main className={classes.maincontainer}>
       <div className={classes.content}>

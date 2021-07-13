@@ -20,7 +20,6 @@ function DashboardFacilitator() {
   const [newsData, setNewsData] = useState();
   const [datePicker, setDatePicker] = useState(false);
   const [date, setDate] = useState(new Date());
-  const [activeTab, setActiveTab] = useState(1);
   const [schedule, setSchedule] = useState("");
   const [scheduleLoading, setScheduleLoading] = useState(false);
   const profileData = useSelector((state) => state.loginReducers.data?.data);

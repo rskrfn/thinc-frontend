@@ -1,10 +1,5 @@
 import React from "react";
 import classes from "./ScheduleContentFacilitator.module.css";
-import {
-  CircularProgressbar as ProgressBar,
-  buildStyles,
-} from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
 import RefreshIcon from "../../../../../assets/refresh.svg";
 import StudentIcon from "../../../../../assets/icons/icon_student.svg";
 

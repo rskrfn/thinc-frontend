@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import classes from "./Profile.module.css";
-import Sidebar from "../../components/sidebar/Sidebar";
 
 function Profile() {
-  const [section, setSection] = useState(0);
   return (
     <main className={classes.maincontainer}>
       <div className={classes.content}>
