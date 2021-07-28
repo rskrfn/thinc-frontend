@@ -26,7 +26,7 @@ function Verification(props) {
   const submitHandler = () => {
     if (!code1 || !code2 || !code3 || !code4) {
       return toast.warn("Enter all the code", {
-        position: "top-center",
+        position: "top-right",
         autoClose: 5000,
         closeOnClick: true,
         pauseOnHover: true,
@@ -53,7 +53,7 @@ function Verification(props) {
         // console.log("otpveriferr", { err });
         if (err.response.data?.message === "Wrong otp code") {
           return toast.error("Wrong verification code", {
-            position: "top-center",
+            position: "top-right",
             autoClose: 5000,
             closeOnClick: true,
             pauseOnHover: true,
@@ -62,7 +62,7 @@ function Verification(props) {
         }
         if (err.response.data?.status === 500) {
           return toast.error("Server Error", {
-            position: "top-center",
+            position: "top-right",
             autoClose: 5000,
             closeOnClick: true,
             pauseOnHover: true,

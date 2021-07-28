@@ -13,7 +13,7 @@ function SendEmail(props) {
   const submitHandler = () => {
     if (!resetData.email) {
       return toast.warn("Enter your email", {
-        position: "top-center",
+        position: "top-right",
         autoClose: 5000,
         closeOnClick: true,
         pauseOnHover: true,
@@ -22,7 +22,7 @@ function SendEmail(props) {
     }
     if (warning) {
       return toast.warn(warning, {
-        position: "top-center",
+        position: "top-right",
         autoClose: 5000,
         closeOnClick: true,
         pauseOnHover: true,
@@ -47,7 +47,7 @@ function SendEmail(props) {
         // console.log("sendemailerr", { err });
         if (err.response.data?.message === "User not found") {
           return toast.error("This email is not registered", {
-            position: "top-center",
+            position: "top-right",
             autoClose: 5000,
             closeOnClick: true,
             pauseOnHover: true,
@@ -56,7 +56,7 @@ function SendEmail(props) {
         }
         if (err.response.data?.status === 500) {
           return toast.error("Server Error", {
-            position: "top-center",
+            position: "top-right",
             autoClose: 5000,
             closeOnClick: true,
             pauseOnHover: true,

@@ -101,7 +101,7 @@ function DashboardFacilitator() {
           setSchedule(false);
           setScheduleLoading(false);
           return toast.error("Server is offline", {
-            position: "top-center",
+            position: "top-right",
             autoClose: 5000,
             closeOnClick: true,
             pauseOnHover: true,
@@ -124,7 +124,7 @@ function DashboardFacilitator() {
     getSchedule();
   }, [date]);
 
-  console.log("profiledata", profileData);
+  // console.log("profiledata", profileData);
   return (
     <main className={classes.maincontainer}>
       <ToastContainer pauseOnFocusLoss={false} />

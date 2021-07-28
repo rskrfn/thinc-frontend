@@ -134,7 +134,7 @@ function DashboardMember() {
           setForYou(false);
           setForYouLoading(false);
           return toast.error("Server is offline", {
-            position: "top-center",
+            position: "top-right",
             autoClose: 5000,
             closeOnClick: true,
             pauseOnHover: true,

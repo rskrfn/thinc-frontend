@@ -39,7 +39,7 @@ function Register() {
       !registerData.repeatpassword
     ) {
       return toast.warn("Fill out all the form", {
-        position: "top-center",
+        position: "top-right",
         autoClose: 5000,
         closeOnClick: true,
         pauseOnHover: true,
@@ -60,7 +60,7 @@ function Register() {
           warning.passwordwarning ||
           warning.repeatwarning,
         {
-          position: "top-center",
+          position: "top-right",
           autoClose: 5000,
           closeOnClick: true,
           pauseOnHover: true,
@@ -94,7 +94,7 @@ function Register() {
       .catch((error) => {
         console.log({ error });
         return toast.error("Error Occured", {
-          position: "top-center",
+          position: "top-right",
           autoClose: 5000,
           closeOnClick: true,
           pauseOnHover: true,

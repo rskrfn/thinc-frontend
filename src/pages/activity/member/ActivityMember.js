@@ -1,16 +1,16 @@
 import React from "react";
-import classes from "./Activity.module.css";
+import classes from "./ActivityMember.module.css";
 
-function Activity() {
+function ActivityMember() {
   return (
     <main className={classes.maincontainer}>
       <div className={classes.content}>
         <section className={classes.activity}>
-          <p>Activity Page</p>
+          <p>ActivityMember Page</p>
         </section>
       </div>
     </main>
   );
 }
 
-export default Activity;
+export default ActivityMember;

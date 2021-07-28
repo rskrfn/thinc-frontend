@@ -1,5 +1,5 @@
-import HomeMember from "../../pages/home/home_member/HomeMember";
-import HomeFacilitator from "../../pages/home/home_facilitator/HomeFacilitator";
+import HomeMember from "../../pages/home/member/HomeMember";
+import HomeFacilitator from "../../pages/home/facilitator/HomeFacilitator";
 import { useSelector } from "react-redux";
 
 function MainPage() {

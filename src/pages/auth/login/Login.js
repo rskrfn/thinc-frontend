@@ -25,7 +25,7 @@ function Login(props) {
   const submitHandler = () => {
     if (!loginData.username || !loginData.password) {
       return toast.warn("Fill out all the form", {
-        position: "top-center",
+        position: "top-right",
         autoClose: 5000,
         closeOnClick: true,
         pauseOnHover: true,
@@ -34,7 +34,7 @@ function Login(props) {
     }
     if (warning.usernamewarning || warning.passwordwarning) {
       return toast.warn(warning.usernamewarning || warning.passwordwarning, {
-        position: "top-center",
+        position: "top-right",
         autoClose: 5000,
         closeOnClick: true,
         pauseOnHover: true,
@@ -49,7 +49,7 @@ function Login(props) {
     // console.log("logincek", err);
     if (err.data?.message === "Incorrect Email or Password") {
       return toast.error("Incorrect email or password", {
-        position: "top-center",
+        position: "top-right",
         autoClose: 5000,
         closeOnClick: true,
         pauseOnHover: true,

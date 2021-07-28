@@ -1,11 +1,11 @@
 import React from "react";
 import classes from "./ScheduleContentFacilitator.module.css";
-import RefreshIcon from "../../../../../assets/refresh.svg";
 import StudentIcon from "../../../../../assets/icons/icon_student.svg";
+import Loading from "../../../../loading/Loading";
 
 function ScheduleContentFacilitator(props) {
   const { data, loading } = props;
-  console.log({ data });
+  // console.log({ data });
   return (
     <main className={classes.maincontainer}>
       {!loading ? (
@@ -44,10 +44,7 @@ function ScheduleContentFacilitator(props) {
           </div>
         )
       ) : (
-        <div className={classes.loading}>
-          <img className={classes.refreshicon} src={RefreshIcon} alt="" />
-          <p className={classes.loadingtext}>Loading</p>
-        </div>
+        <Loading />
       )}
     </main>
   );

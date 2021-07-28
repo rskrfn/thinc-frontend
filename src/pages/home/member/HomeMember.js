@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import classes from "./HomeFacilitator.module.css";
+import classes from "./HomeMember.module.css";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import Message from "../../../components/dashboard/messages/Message";
 import FloatButton from "../../../components/dashboard/component/message_floating/FloatButton";
-import DashboardFacilitator from "../../dashboard/dashboard_facilitator/DashboardFacilitator";
+import DashboardLayout from "../../dashboard/dashboard_member/DashboardMember";
 import Profile from "../../profile/Profile";
-import Activity from "../../activity/Activity";
+import ActivityMember from "../../activity/member/ActivityMember";
 import Help from "../../help/Help";
 
-function HomeFacilitator() {
+function HomeMember() {
   const [section, setSection] = useState(1);
 
   const RenderSection = () => {
@@ -22,7 +22,7 @@ function HomeFacilitator() {
       case 2:
         return (
           <>
-            <Activity />
+            <ActivityMember />
           </>
         );
       case 3:
@@ -34,7 +34,7 @@ function HomeFacilitator() {
       default:
         return (
           <div className={classes.dashboard}>
-            <DashboardFacilitator />
+            <DashboardLayout />
             <Message />
           </div>
         );
@@ -53,4 +53,4 @@ function HomeFacilitator() {
   );
 }
 
-export default HomeFacilitator;
+export default HomeMember;
