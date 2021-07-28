@@ -30,6 +30,13 @@
   font-weight: 500;
   font-size: 16px;
 }
+.warningtext {
+  margin: 0;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--primary-red);
+}
 .headercolumn {
   width: 5%;
 }
@@ -175,17 +182,16 @@
   border-radius: 10px;
   background-color: rgba(235, 235, 235, 1);
 }
+
 .bottomsection {
   padding: 0 2rem 1rem 2rem;
 }
-
 .buttonsection {
   display: flex;
   flex-direction: column;
   padding: 0 2rem 0 2rem;
   margin-bottom: 2rem;
 }
-
 .submitbtn {
   display: flex;
   justify-content: flex-end;
