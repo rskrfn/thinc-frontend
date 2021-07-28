@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import classes from "./Sidebar.module.css";
 import { useSelector } from "react-redux";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import Modal from "./modal/Modal";
 
 // Icons
@@ -51,8 +50,8 @@ function Sidebar(props) {
       {modal ? <Modal setModal={setModal} /> : null}
       <aside className={classes.sidebar}>
         <div className={classes.content}>
-          <Link
-            to="/profile"
+          <section
+            // to="/profile"
             className={
               section === 0
                 ? classes.profilesectionactive
@@ -92,9 +91,9 @@ function Sidebar(props) {
             >
               online
             </p>
-          </Link>
-          <Link
-            to="/dashboard"
+          </section>
+          <section
+            // to="/dashboard"
             className={
               section === 1
                 ? classes.dashboardsectionactive
@@ -116,9 +115,9 @@ function Sidebar(props) {
             >
               Dashboard
             </p>
-          </Link>
-          <Link
-            to="/activity"
+          </section>
+          <section
+            // to="/activity"
             className={
               section === 2
                 ? classes.activitysectionactive
@@ -142,9 +141,9 @@ function Sidebar(props) {
             >
               Activity
             </p>
-          </Link>
-          <Link
-            to="/help"
+          </section>
+          <section
+            // to="/help"
             className={
               section === 3
                 ? classes.sectionactive
@@ -168,7 +167,7 @@ function Sidebar(props) {
             >
               Help
             </p>
-          </Link>
+          </section>
           <section
             className={
               section === 0

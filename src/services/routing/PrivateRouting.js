@@ -20,7 +20,7 @@ export function PrivateRouteAuth({ child: Component, isLogin, user, ...rest }) {
         !user.data?.token ? (
           <Component {...props} />
         ) : (
-          <Redirect to="/dashboard" />
+          <Redirect to="/home" />
         )
       }
     />

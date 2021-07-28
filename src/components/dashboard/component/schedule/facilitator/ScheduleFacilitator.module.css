@@ -1,0 +1,41 @@
+.maincontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  /* padding-left: 2rem;
+  padding-right: 2rem; */
+  width: calc(100% - 4rem);
+  margin-bottom: 2rem;
+}
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.8rem 2rem 0.8rem 2rem;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+  background-color: var(--primary-blue);
+  cursor: pointer;
+}
+.button:hover {
+  background-color: rgb(131, 168, 212);
+}
+.buttonicon {
+  align-self: center;
+  width: 30px;
+  margin-right: 1rem;
+}
+.buttontext {
+  text-align: center;
+  align-self: center;
+  margin: 0;
+  font-family: "Kanit";
+  font-weight: 400;
+  font-size: 24px;
+  color: white;
+}

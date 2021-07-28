@@ -24,7 +24,7 @@ function NewPassword(props) {
   const submitHandler = () => {
     if (!resetData.newpassword || !repeat) {
       return toast.warn("Fill out all the form", {
-        position: "top-center",
+        position: "top-right",
         autoClose: 5000,
         closeOnClick: true,
         pauseOnHover: true,
@@ -36,7 +36,7 @@ function NewPassword(props) {
       warning.repeatwarning !== "Password match"
     ) {
       return toast.error(warning.newpasswordwarning || warning.repeatwarning, {
-        position: "top-center",
+        position: "top-right",
         autoClose: 5000,
         closeOnClick: true,
         pauseOnHover: true,
@@ -72,7 +72,7 @@ function NewPassword(props) {
         console.log("reseterror", { err });
         if (err.response.data?.status === 500) {
           return toast.error("Server Error", {
-            position: "top-center",
+            position: "top-right",
             autoClose: 5000,
             closeOnClick: true,
             pauseOnHover: true,

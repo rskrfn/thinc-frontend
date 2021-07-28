@@ -5,7 +5,7 @@ import {
   buildStyles,
 } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import Refresh from "../../../../assets/refresh.svg";
+import RefreshIcon from "../../../../../assets/refresh.svg";
 
 function ScheduleContent(props) {
   const { data, allschedule, loading } = props;
@@ -69,7 +69,7 @@ function ScheduleContent(props) {
         )
       ) : (
         <div className={classes.loading}>
-          <img className={classes.refreshicon} src={Refresh} alt="" />
+          <img className={classes.refreshicon} src={RefreshIcon} alt="" />
           <p className={classes.loadingtext}>Loading</p>
         </div>
       )}

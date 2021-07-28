@@ -2,7 +2,7 @@ import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import classes from "./News.module.css";
-import Refresh from "../../../../assets/refresh.svg";
+import Loading from "../../../loading/Loading";
 
 function News(props) {
   const { newsData } = props;
@@ -39,8 +39,7 @@ function News(props) {
         </Carousel>
       ) : (
         <div className={classes.newsloadingcontainer}>
-          <img className={classes.refreshicon} src={Refresh} alt="" />
-          <p className={classes.newsloadingtext}>News Loading...</p>
+          <Loading text="News Loading..." />
         </div>
       )}
     </>

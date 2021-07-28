@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./ForYou.module.css";
-import ScheduleContent from "../../schedule_content/ScheduleContent";
+import ScheduleContent from "../../schedule_content/member/ScheduleContent";
 
 function ForYou(props) {
   const { data, loading } = props;

@@ -1,0 +1,84 @@
+.header {
+  margin: 0;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 18px;
+}
+.tableheader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+.headercheckbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5%;
+}
+.checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+.headerclassname {
+  width: 20%;
+  /* background-color: antiquewhite; */
+}
+.headertext {
+  margin: 0;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 18px;
+}
+.headercategory {
+  width: 10%;
+  text-align: center;
+  /* background-color: grey; */
+}
+.headerdesc {
+  width: 30%;
+  /* background-color: white; */
+}
+.headerschedule {
+  text-align: center;
+  width: 20%;
+  /* background-color: blueviolet; */
+}
+.headerstudents {
+  text-align: center;
+  width: 10%;
+  /* background-color: cadetblue; */
+}
+.tablecontent {
+  width: 100%;
+}
+.viewall {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.viewallcontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  cursor: pointer;
+}
+.viewalltext {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 16px;
+  margin-right: 10px;
+  color: black;
+}

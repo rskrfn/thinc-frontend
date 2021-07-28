@@ -1,28 +1,29 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
-import classes from "./DashboardLayout.module.css";
+import classes from "./DashboardMember.module.css";
 import axios from "axios";
 import moment from "moment";
 import { DatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
 import { ThemeProvider } from "@material-ui/styles";
 import { createTheme } from "@material-ui/core/styles";
 import MomentUtils from "@date-io/moment";
-import CalendarIcon from "../../assets/icons/icon_calendar.png";
+import CalendarIcon from "../../../assets/icons/icon_calendar.png";
 import { useSelector } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
 
-import News from "./component/news/News";
-import WeekPicker from "./component/week_picker/WeekPicker";
-import AllSchedule from "./component/schedule/all_schedule/AllSchedule";
-import ForYou from "./component/schedule/for_you/ForYou";
+import News from "../../../components/dashboard/component/news/News";
+import WeekPicker from "../../../components/dashboard/component/week_picker/WeekPicker";
+import AllSchedule from "../../../components/dashboard/component/schedule/all_schedule/AllSchedule";
+import ForYou from "../../../components/dashboard/component/schedule/for_you/ForYou";
 
-function DashboardLayout() {
+function DashboardMember() {
   const [newsData, setNewsData] = useState();
   const [datePicker, setDatePicker] = useState(false);
   const [date, setDate] = useState(new Date());
   const [activeTab, setActiveTab] = useState(1);
-  const [allSchedule, setAllSchedule] = useState();
+  const [allSchedule, setAllSchedule] = useState("");
   const [allLoading, setAllLoading] = useState(false);
-  const [forYou, setForYou] = useState();
+  const [forYou, setForYou] = useState("");
   const [foryouLoading, setForYouLoading] = useState(false);
   const profileData = useSelector((state) => state.loginReducers.data?.data);
 
@@ -94,8 +95,12 @@ function DashboardLayout() {
         }
       })
       .catch((err) => {
-        // console.log({ err });
-        if (err.response.data.message === "Data not found") {
+        console.log({ err });
+        if (err.message === "Network Error") {
+          setAllSchedule(false);
+          setAllLoading(false);
+          return;
+        } else if (err.response?.data?.message === "Data not found") {
           setAllSchedule(false);
           setTimeout(() => {
             setAllLoading(false);
@@ -125,7 +130,17 @@ function DashboardLayout() {
         }
       })
       .catch((err) => {
-        if (err.response.data.message === "Data not found") {
+        if (err.message === "Network Error") {
+          setForYou(false);
+          setForYouLoading(false);
+          return toast.error("Server is offline", {
+            position: "top-right",
+            autoClose: 5000,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          });
+        } else if (err.response?.data?.message === "Data not found") {
           setForYou(false);
           setTimeout(() => {
             setForYouLoading(false);
@@ -146,6 +161,7 @@ function DashboardLayout() {
   // console.log("newsdata", profileData);
   return (
     <main className={classes.maincontainer}>
+      <ToastContainer pauseOnFocusLoss={false} />
       <div className={classes.content}>
         <section className={classes.newssection}>
           <p className={classes.newsheader}>News</p>
@@ -226,4 +242,4 @@ function DashboardLayout() {
   );
 }
 
-export default DashboardLayout;
+export default DashboardMember;
