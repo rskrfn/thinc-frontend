@@ -50,8 +50,7 @@ This project is a step for us to become a fullstack mobile developer.
 
 ### Built With
 
-- [Express](https://expressjs.com/)
-- [React](https://reactjs.org/docs/create-a-new-react-app.html)
+- [React.js](https://reactjs.org/docs/create-a-new-react-app.html)
 - [React Router](https://reactrouter.com/web/guides/quick-start)
 - [Axios](https://www.npmjs.com/package/axios)
 - [HTML](https://www.w3schools.com/html/)
@@ -68,25 +67,13 @@ To get a local copy up and running follow these simple steps.
 
 Things you need to install
 
-- npm
+- nodejs
   ```sh
-  npm install npm@latest -g
+  You can either install from official nodejs(https://nodejs.org/) website or by using package manager of your choice
   ```
-- react
+- Code Editor
   ```sh
-  npx create-react-app (directory)
-  ```
-- react-router-dom
-  ```sh
-  npm i react-router-dom
-  ```
-- axios
-  ```sh
-  npm i axios
-  ```
-- bootstrap
-  ```sh
-  npm i bootstrap
+  Use your preffered code editor like VSCode, Sublime, etc
   ```
 
 ### Installation
@@ -95,7 +82,19 @@ Things you need to install
    ```sh
    git clone https://github.com/rskrfn/thinc-frontend.git
    ```
-      <!-- ROADMAP -->
+2. Setup environment (see the .env.example)
+3. Open terminal on thinc-frontend directory
+4. Package install using npm or yarn
+  ```sh
+  npm install
+  ```
+5. Run the app
+  ```sh 
+  npm start
+  ```
+
+  <!-- ROADMAP -->
+
 ## Roadmap
 
 This project is our learning step to become a fullstack mobile developer.
