@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import classes from "./NewClass.module.css";
+import classes from "./CreateCourse.module.css";
 import {
   DatePicker,
   TimePicker,
@@ -11,7 +11,7 @@ import MomentUtils from "@date-io/moment";
 import moment from "moment";
 import { inputValidation } from "../../../services/validation/InputValidation";
 
-function NewClass(props) {
+function CreateCourse(props) {
   const { newclass, setNewClass, createNewClass, warning, setWarning } = props;
   const [priceRadio, setPriceRadio] = useState(0);
   const [picker, setPicker] = useState({
@@ -366,4 +366,4 @@ function NewClass(props) {
   );
 }
 
-export default NewClass;
+export default CreateCourse;

@@ -1,13 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
-import classes from "./ActivityFacilitator.module.css";
-import MyClass from "../../../components/activity/myclass/MyClass";
-import { useSelector } from "react-redux";
 import axios from "axios";
-import NewClass from "../../../components/activity/newclass/NewClass";
+import { useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import moment from "moment";
+import classes from "./ActivityFacilitator.module.css";
+import MyClass from "../../../components/activity/myclass/MyClass";
+import CreateCourse from "../../../components/activity/createcourse/CreateCourse";
 
 function ActivityFacilitator(props) {
   const profileData = useSelector((state) => state.loginReducers.data);
@@ -179,7 +179,7 @@ function ActivityFacilitator(props) {
         <section className={classes.activity}>
           <p className={classes.pageheader}>Activity</p>
           <MyClass myclass={myClass} loading={myclassLoading} />
-          <NewClass
+          <CreateCourse
             newclass={newClass}
             setNewClass={setNewClass}
             createNewClass={createNewClass}
