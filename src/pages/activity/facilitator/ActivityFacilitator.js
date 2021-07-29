@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import moment from "moment";
 import classes from "./ActivityFacilitator.module.css";
-import MyClass from "../../../components/activity/myclass/MyClass";
+import MyClass from "../../../components/activity/myclass/facilitator/MyClass";
 import CreateCourse from "../../../components/activity/createcourse/CreateCourse";
 
 function ActivityFacilitator(props) {
