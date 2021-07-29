@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import classes from "./MyClassContent.module.css";
-import OptionIcon from "../../../../assets/icons/icon_lista.png";
+import OptionIcon from "../../../../../assets/icons/icon_lista.png";
 import moment from "moment";
-import StudentIcon from "../../../../assets/icons/icon_student.svg";
-import Loading from "../../../loading/Loading";
+import StudentIcon from "../../../../../assets/icons/icon_student.svg";
+import Loading from "../../../../loading/Loading";
 
 function MyClassContent(props) {
   const { myclass, loading } = props;

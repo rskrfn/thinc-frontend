@@ -46,9 +46,17 @@ function Login(props) {
 
   useEffect(() => {
     const { err } = props.loginReducers;
-    // console.log("logincek", err);
-    if (err.data?.message === "Incorrect Email or Password") {
+    console.log("logincek", props.loginReducers);
+    if (err && err.response?.data?.message === "Incorrect Email or Password") {
       return toast.error("Incorrect email or password", {
+        position: "top-right",
+        autoClose: 5000,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    } else if (err && err.message === "Network Error") {
+      return toast.error("Server is offline", {
         position: "top-right",
         autoClose: 5000,
         closeOnClick: true,

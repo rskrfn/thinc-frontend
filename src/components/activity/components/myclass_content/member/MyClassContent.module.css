@@ -1,0 +1,134 @@
+.maincontainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 1rem;
+}
+.loadingcontainer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.contentcontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 3px;
+  padding: 1rem 0 1rem 0;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  box-shadow: 0 0 5px 2px rgba(51, 51, 51, 0.1);
+  -webkit-box-shadow: 0 0 5px 2px rgba(51, 51, 51, 0.1);
+  -moz-box-shadow: 0 0 5px 2px rgba(51, 51, 51, 0.1);
+}
+.tablecheckbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5%;
+}
+.checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+.tableclassname {
+  width: 20%;
+  /* background-color: antiquewhite; */
+}
+.tabletext {
+  margin: 0;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tablecategory {
+  width: 10%;
+  text-align: center;
+  /* background-color: grey; */
+}
+.tabledesc {
+  width: 30%;
+  /* background-color: grey; */
+}
+.tableprogress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 10%;
+}
+.progressbar {
+  width: 3rem;
+  height: 3rem;
+}
+.tablestatus {
+  width: 10%;
+  text-align: center;
+}
+.status {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--primary-blue);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 10% 0 10%;
+  padding: 8px 0 8px 0;
+  border-radius: 20px;
+  background-color: rgba(210, 222, 237, 1);
+}
+.tablescore {
+  width: 10%;
+  text-align: center;
+}
+.score {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+}
+.unfinished {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 13px;
+  color: rgba(186, 87, 87, 1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 10% 0 10%;
+  padding: 8px 0 8px 0;
+  border-radius: 20px;
+  background-color: rgba(237, 210, 210, 1);
+}
+.tableoption {
+  display: flex;
+  width: 5%;
+  justify-content: center;
+  align-items: center;
+}
+.optionicon {
+  height: 25px;
+}
+
+.emptycourse {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.emptytext {
+  font-family: "kanit";
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--primary-blue);
+}

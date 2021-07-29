@@ -1,11 +1,13 @@
+import moment from "moment";
+
 export const nameValidation = (input) => {
   let reg = /^[a-z ,.'-]+$/i;
 
   if (input.length === 0) {
     return "Name cannot be empty";
   }
-  if(input.length > 14){
-    return "Username must be under 15 characters"
+  if (input.length > 14) {
+    return "Username must be under 15 characters";
   }
   if (!reg.test(input)) {
     return "Name cannot contain number and special characters";
@@ -89,5 +91,39 @@ export const usernameemailValidation = (input) => {
   }
   if (!reg.test(input) && input.includes("@")) {
     return "Wrong email format";
+  }
+};
+
+export const inputValidation = (form, value, reference) => {
+  let alphanumeric = /^[A-Za-z0-9\s]+[A-Za-z0-9\s]+$(\.0-9+)?/g;
+  // let alpha = /^[A-Za-z\s]+[A-Za-z\s]+$(\.0-9+)?/g;
+  // let number = /^[0-9]+$(\.0-9+)?/;
+  // let time = /^([0-1][0-9]|[2][0-3]):([0-5][0-9])$/;
+  if (form === "coursename") {
+    if (value.length < 4) {
+      return "Course name must be at least 4 characters";
+    } else if (!alphanumeric.test(value)) {
+      return "Course name can only contain alphabetical characters and numeric";
+    }
+  }
+  if (form === "category" && value === 0)
+    return "Please select course category";
+  if (form === "level" && value === 0) return "Please select course level";
+  if (form === "time") {
+    if (!value || !reference) return "Please select course time";
+    if (moment(value).isSameOrBefore(reference))
+      return "End time must be after the start time";
+    if (!moment(value).isSameOrAfter(moment(reference).add(45, "m"))) {
+      return "Minimum course duration is 45 minutes";
+    }
+  }
+  if (form === "description") {
+    if (value.split(" ").length < 10)
+      return "Course description must be at least 10 words";
+  }
+  if (form === "price") {
+    if (!value) return "Price must be determined";
+    if (Number(value) < 10) return "Minimum price is $10";
+    if (Number(value) > 200) return "Maximum price is $200";
   }
 };

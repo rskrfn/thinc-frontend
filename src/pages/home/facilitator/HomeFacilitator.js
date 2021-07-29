@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import classes from "./HomeFacilitator.module.css";
 import Sidebar from "../../../components/sidebar/Sidebar";
 import Message from "../../../components/dashboard/messages/Message";
@@ -27,7 +27,7 @@ function HomeFacilitator() {
     };
     axios(config)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         if (res.data?.message === "Token Valid") {
           setTokenModal(false);
           return;

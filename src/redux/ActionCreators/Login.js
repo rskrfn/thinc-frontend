@@ -15,9 +15,10 @@ export function loginAction(data) {
         dispatch({ type: "LOGIN_FULFILLED", payload: res.data.data });
       })
       .catch((err) => {
+        console.log("redux", {err});
         dispatch({
           type: "LOGIN_REJECTED",
-          payload: err.response,
+          payload: err,
         });
       });
   };

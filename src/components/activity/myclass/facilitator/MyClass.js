@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MyClassContent from "../components/myclass_content/MyClassContent";
+import MyClassContent from "../../components/myclass_content/facilitator/MyClassContent";
 import classes from "./MyClass.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
