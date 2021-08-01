@@ -1,20 +1,26 @@
 import React from "react";
 import classes from "./NewClass.module.css";
 import NewClassContent from "../components/newclass_content/NewClassContent";
+import SearchIcon from "../../../assets/icons/icon_search.png";
 
-function NewClass() {
+function NewClass(props) {
+  const { newclass, loading, newclassinfo, filter, setFilter, getNewClass } =
+    props;
   return (
     <main className={classes.maincontainer}>
       <div className={classes.content}>
         <p className={classes.pageheader}>New class</p>
         <section className={classes.filtersection}>
           <div className={classes.searchcontainer}>
-            <input className={classes.searchbox} />
+            <div className={classes.searchboxcontainer}>
+              <img className={classes.searchicon} src={SearchIcon} alt="" />
+              <input className={classes.searchbox} placeholder="Quick search" />
+            </div>
             <button className={classes.searchbtn}>Search</button>
           </div>
           <div className={classes.filtercontainer}>
-            <div className={classes.categorycontainer}>
-              <select className={classes.categorydropdown}>
+            <div className={classes.dropdowncontainer}>
+              <select className={classes.dropdown}>
                 <option value={0} selected disable hidden>
                   Categories
                 </option>
@@ -26,8 +32,8 @@ function NewClass() {
                 <option value={6}>Science</option>
               </select>
             </div>
-            <div className={classes.levelcontainer}>
-              <select className={classes.leveldropdown}>
+            <div className={classes.dropdowncontainer}>
+              <select className={classes.dropdown}>
                 <option value={0} selected disable hidden>
                   Level
                 </option>
@@ -36,8 +42,8 @@ function NewClass() {
                 <option value={3}>Advance</option>
               </select>
             </div>
-            <div className={classes.pricingcontainer}>
-              <select className={classes.pricedropdown}>
+            <div className={classes.dropdowncontainer}>
+              <select className={classes.dropdown}>
                 <option value={0} selected disable hidden>
                   Pricing
                 </option>
@@ -45,8 +51,8 @@ function NewClass() {
                 <option value={2}>Paid</option>
               </select>
             </div>
-            <div className={classes.sortbycontainer}>
-              <select className={classes.sortbydropdown}>
+            <div className={classes.dropdowncontainer}>
+              <select className={classes.dropdown}>
                 <option value={0} selected disable hidden>
                   Sort by
                 </option>
@@ -81,7 +87,7 @@ function NewClass() {
             </div>
           </div>
           <div className={classes.contentsection}>
-            <NewClassContent />
+            <NewClassContent newclass={newclass} loading={loading} />
           </div>
         </section>
       </div>
