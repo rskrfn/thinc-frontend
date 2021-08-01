@@ -1,0 +1,65 @@
+.content {
+  width: 100%;
+}
+.contentcontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: calc(100% - 2rem);
+  margin-bottom: 5px;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  box-shadow: 0 0 5px 2px rgba(51, 51, 51, 0.1);
+  -webkit-box-shadow: 0 0 5px 2px rgba(51, 51, 51, 0.1);
+  -moz-box-shadow: 0 0 5px 2px rgba(51, 51, 51, 0.1);
+}
+.tableclassname {
+  width: 25%;
+}
+.tablecategory {
+  width: 10%;
+  text-align: center;
+}
+.tabledescription {
+  width: 30%;
+}
+.tablelevel {
+  width: 10%;
+}
+.tableprice {
+  width: 10%;
+  text-align: center;
+}
+.registerbtn {
+  align-self: center;
+  width: 10%;
+  height: 2.5rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: var(--primary-green);
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 14px;
+  color: white;
+}
+.tableoption {
+  display: flex;
+  width: 5%;
+  justify-content: center;
+  align-items: center;
+}
+.optionicon {
+  height: 25px;
+}
+.tabletext {
+  margin: 0;
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

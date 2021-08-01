@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import classes from "./ActivityMember.module.css";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import { ToastContainer, toast } from "react-toastify";
+// import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MyClass from "../../../components/activity/myclass/member/MyClass";
 import NewClass from "../../../components/activity/newclass/NewClass";
@@ -63,7 +64,7 @@ function ActivityMember(props) {
       });
   };
   const getNewClass = () => {
-    setMyClassLoading(true);
+    setNewClassLoading(true);
     const config = {
       method: "GET",
       url: `${process.env.REACT_APP_API_URL}/courses/all`,
@@ -116,7 +117,7 @@ function ActivityMember(props) {
   console.log("activity", newClass);
   return (
     <main className={classes.maincontainer}>
-      <ToastContainer pauseOnFocusLoss={false} />
+      {/* <ToastContainer pauseOnFocusLoss={false} /> */}
       <div className={classes.content}>
         <section className={classes.activity}>
           <p className={classes.pageheader}>Activity</p>
@@ -124,9 +125,10 @@ function ActivityMember(props) {
           <NewClass
             newclass={newClass}
             loading={newClassLoading}
-            newclasinfo={newClassInfo}
+            newclassinfo={newClassInfo}
             filter={filter}
             setFilter={setFilter}
+            getNewClass={getNewClass}
           />
         </section>
       </div>
