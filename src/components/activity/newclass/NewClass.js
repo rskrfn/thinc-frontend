@@ -4,7 +4,9 @@ import NewClassContent from "../components/newclass_content/NewClassContent";
 import SearchIcon from "../../../assets/icons/icon_search.png";
 
 function NewClass(props) {
-  const { newclass, loading, newclassinfo, filter, setFilter, getNewClass } =
+  const { newclass, loading,
+    //  newclassinfo, filter, setFilter, getNewClass 
+    } =
     props;
   return (
     <main className={classes.maincontainer}>
