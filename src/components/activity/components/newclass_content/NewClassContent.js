@@ -22,7 +22,7 @@ function NewClassContent(props) {
                   <p className={classes.tabletext}>{item.Name}</p>
                 </div>
                 <div className={classes.tablecategory}>
-                  <p className={classes.tabletext}>{item.Category}</p>
+                  <p className={classes.tabletextcenter}>{item.Category}</p>
                 </div>
                 <div className={classes.tabledescription}>
                   <p className={classes.tabletext}>{item.Description}</p>
@@ -31,7 +31,7 @@ function NewClassContent(props) {
                   <p className={classes.tabletext}>{item.Level}</p>
                 </div>
                 <div className={classes.tableprice}>
-                  <p className={classes.tabletext}>
+                  <p className={classes.tabletextcenter}>
                     {item.Price === 0 ? "Free" : item.Price}
                   </p>
                 </div>

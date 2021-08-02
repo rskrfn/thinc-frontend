@@ -1,6 +1,5 @@
 .maincontainer {
   display: flex;
-  flex: 1;
   width: 100%;
   height: 100vh;
   flex-direction: column;
@@ -14,14 +13,104 @@
   width: 100%;
   height: 100vh;
 }
-.sidebar {
-  margin: 0;
-  width: 20%;
-  min-width: 14rem;
-  height: 100%;
-}
 .profile {
   margin: 0;
-  width: 80%;
-  height: 100%;
+  width: calc(100% - 1rem);
+  margin-top: 1rem;
+}
+.bannersection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 35%;
+  border-radius: 20px 20px 0 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 122%),
+    url(/src/assets/images/img_profilebanner.png) no-repeat;
+  background-size: cover;
+}
+.avatarcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.avatar {
+  width: 170px;
+  height: 170px;
+  border-radius: 100%;
+}
+.editicon {
+  align-self: flex-end;
+  width: 20px;
+  height: 20px;
+  transform: translateY(-1.5rem);
+  z-index: 50;
+  cursor: pointer;
+}
+.name {
+  margin: 0;
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 26px;
+  color: white;
+}
+.optionsection {
+  width: 100%;
+  background-color: white;
+  border-radius: 0 0 20px 20px;
+  padding-bottom: 1rem;
+}
+.pageheader {
+  margin: 0;
+  padding: 2rem 3rem 0 3rem;
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 24px;
+}
+.menucontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 3rem 1rem 3rem;
+  border-bottom: 2px solid #e6edf6;
+  cursor: pointer;
+}
+.menucontainer:hover {
+  border-radius: 10px;
+  background-color: #e6edf6;
+}
+.menucontainerbottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 3rem 0 3rem;
+  cursor: pointer;
+}
+.menucontainerbottom:hover {
+  border-radius: 10px;
+  background-color: #e6edf6;
+}
+.leftside {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.menuicon {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+.menutext {
+  font-family: "Kanit";
+  font-weight: 400;
+  font-size: 20px;
+}
+.arrowicon {
+  width: 30px;
+  height: 30px;
 }
