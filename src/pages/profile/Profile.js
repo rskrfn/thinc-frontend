@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import classes from "./Profile.module.css";
 
-import ChangeAvatar from "../../components/profile/avatar_modal/ChangeAvatar";
+import PersonalInformation from "../../components/profile/information_modal/PersonalInformation";
 
 import DefaultAvatar from "../../assets/images/img_profilepicture.png";
 import editIcon from "../../assets/icons/icon_edits.png";
@@ -20,7 +20,6 @@ function Profile() {
   const profileData = useSelector((state) => state.loginReducers.data);
   const [profile, setProfile] = useState("");
   const [modal, setModal] = useState({
-    avatar: true,
     personal: false,
     password: false,
   });
@@ -107,8 +106,18 @@ function Profile() {
             </p>
           </div>
           <div className={classes.optionsection}>
+            {modal.personal ? (
+              <div className={classes.modalcontainer}>
+                <PersonalInformation modal={modal} setModal={setModal} />
+              </div>
+            ) : null}
             <p className={classes.pageheader}>Profile Settings</p>
-            <div className={classes.menucontainer}>
+            <div
+              className={classes.menucontainer}
+              onClick={() => {
+                setModal({ ...modal, personal: true });
+              }}
+            >
               <div className={classes.leftside}>
                 <img className={classes.menuicon} src={profileIcon} alt="" />
                 <p className={classes.menutext}>Personal Information</p>
