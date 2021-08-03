@@ -12,10 +12,6 @@ import { useSelector } from "react-redux";
 function HomeMember() {
   const page = useSelector((state) => state.pageReducers);
   const [section, setSection] = useState(1);
-  const [modal, setModal] = useState({
-    success: false,
-    failed: false,
-  });
 
   const RenderSection = () => {
     if (page.dashboard === true) {

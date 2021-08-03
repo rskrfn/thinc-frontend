@@ -23,8 +23,7 @@ import HelpIcon from "../../assets/icons/icon_help.png";
 import HelpIconActive from "../../assets/icons/icon_helpactive.png";
 import LogoutIcon from "../../assets/icons/icon_logout.png";
 
-function Sidebar(props) {
-  const { section, setSection } = props;
+function Sidebar() {
   const dispatch = useDispatch();
   const profileData = useSelector((state) => state.loginReducers.data);
   const page = useSelector((state) => state.pageReducers);
