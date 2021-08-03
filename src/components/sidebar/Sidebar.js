@@ -1,9 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import classes from "./Sidebar.module.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import Modal from "./modal/Modal";
+import {
+  dashboardAction,
+  activityAction,
+  helpAction,
+  profileAction,
+} from "../../redux/ActionCreators/Page";
 
 // Icons
 import NotifIcon from "../../assets/icons/icon_notif.png";
@@ -19,7 +25,9 @@ import LogoutIcon from "../../assets/icons/icon_logout.png";
 
 function Sidebar(props) {
   const { section, setSection } = props;
+  const dispatch = useDispatch();
   const profileData = useSelector((state) => state.loginReducers.data);
+  const page = useSelector((state) => state.pageReducers);
   const [profile, setProfile] = useState("");
   const [modal, setModal] = useState(false);
 
@@ -53,19 +61,20 @@ function Sidebar(props) {
           <section
             // to="/profile"
             className={
-              section === 0
+              page.profile
                 ? classes.profilesectionactive
                 : classes.profilesection
             }
             onClick={() => {
-              setSection(0);
+              // setSection(0);
+              dispatch(profileAction());
             }}
           >
             <div className={classes.notificoncontainer}>
               <span>
                 <img
                   className={classes.notificon}
-                  src={section === 0 ? NotifIconActive : NotifIcon}
+                  src={page.profile ? NotifIconActive : NotifIcon}
                   alt=""
                 />
               </span>
@@ -83,34 +92,33 @@ function Sidebar(props) {
                 />
               </span>
             </div>
-            <p className={section === 0 ? classes.nameactive : classes.name}>
+            <p className={page.profile ? classes.nameactive : classes.name}>
               {profileData.data.name ? profileData.data.name : "User name"}
             </p>
-            <p
-              className={section === 0 ? classes.statusactive : classes.status}
-            >
+            <p className={page.profile ? classes.statusactive : classes.status}>
               online
             </p>
           </section>
           <section
             // to="/dashboard"
             className={
-              section === 1
+              page.dashboard
                 ? classes.dashboardsectionactive
                 : classes.dashboardsection
             }
             onClick={() => {
-              setSection(1);
+              // setSection(1);
+              dispatch(dashboardAction());
             }}
           >
             <img
               className={classes.sidebaricons}
-              src={section === 1 ? DashboardActive : DashboardIcon}
+              src={page.dashboard ? DashboardActive : DashboardIcon}
               alt=""
             />
             <p
               className={
-                section === 1 ? classes.sidebarmenuactive : classes.sidebarmenu
+                page.dashboard ? classes.sidebarmenuactive : classes.sidebarmenu
               }
             >
               Dashboard
@@ -119,24 +127,25 @@ function Sidebar(props) {
           <section
             // to="/activity"
             className={
-              section === 2
+              page.activity
                 ? classes.activitysectionactive
-                : section === 3 || section === 0
+                : page.help || page.profile
                 ? classes.activitysectionbelow
                 : classes.activitysection
             }
             onClick={() => {
-              setSection(2);
+              // setSection(2);
+              dispatch(activityAction());
             }}
           >
             <img
               className={classes.sidebaricons}
-              src={section === 2 ? ActivityActive : ActivityIcon}
+              src={page.activity ? ActivityActive : ActivityIcon}
               alt=""
             />
             <p
               className={
-                section === 2 ? classes.sidebarmenuactive : classes.sidebarmenu
+                page.activity ? classes.sidebarmenuactive : classes.sidebarmenu
               }
             >
               Activity
@@ -145,24 +154,25 @@ function Sidebar(props) {
           <section
             // to="/help"
             className={
-              section === 3
+              page.help
                 ? classes.sectionactive
-                : section === 0
+                : page.profile
                 ? classes.sectionprofile
                 : classes.section
             }
             onClick={() => {
-              setSection(3);
+              // setSection(3);
+              dispatch(helpAction());
             }}
           >
             <img
               className={classes.sidebaricons}
-              src={section === 3 ? HelpIconActive : HelpIcon}
+              src={page.help ? HelpIconActive : HelpIcon}
               alt=""
             />
             <p
               className={
-                section === 3 ? classes.sidebarmenuactive : classes.sidebarmenu
+                page.help ? classes.sidebarmenuactive : classes.sidebarmenu
               }
             >
               Help
@@ -170,7 +180,7 @@ function Sidebar(props) {
           </section>
           <section
             className={
-              section === 0
+              page.profile
                 ? classes.logoutsectionprofile
                 : classes.logoutsection
             }

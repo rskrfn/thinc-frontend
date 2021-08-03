@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import classes from "./Profile.module.css";
 
+import ChangeAvatar from "../../components/profile/avatar_modal/ChangeAvatar";
+
 import DefaultAvatar from "../../assets/images/img_profilepicture.png";
 import editIcon from "../../assets/icons/icon_edits.png";
 import arrowIcon from "../../assets/icons/icon_arrow.png";
@@ -17,7 +19,13 @@ import { useSelector } from "react-redux";
 function Profile() {
   const profileData = useSelector((state) => state.loginReducers.data);
   const [profile, setProfile] = useState("");
-
+  const [modal, setModal] = useState({
+    avatar: true,
+    personal: false,
+    password: false,
+  });
+  const newAvatar = new FormData();
+  const reader = new FileReader();
   const getProfile = () => {
     let config = {
       method: "GET",
@@ -35,10 +43,37 @@ function Profile() {
       .catch((err) => console.log(err));
   };
 
+  const uploadAvatar = (e) => {
+    let file = e.target.files;
+    reader.readAsDataURL(file[0]);
+    reader.onload = (e) => {
+      newAvatar.append("id", profileData.data?.id);
+      newAvatar.append("image", file[0]);
+      let config = {
+        method: "PATCH",
+        url: `${process.env.REACT_APP_API_URL}/profile`,
+        headers: {
+          token: profileData.token,
+        },
+        data: newAvatar,
+      };
+      return axios(config)
+        .then((res) => {
+          console.log("avatar", { res });
+          window.location.reload();
+          // getProfile();
+        })
+        .catch((err) => {
+          console.log("avatar", { err });
+        });
+    };
+  };
+
   useEffect(() => {
     getProfile();
   }, []);
 
+  // console.log("avatar", {  });
   return (
     <main className={classes.maincontainer}>
       <div className={classes.content}>
@@ -54,7 +89,18 @@ function Profile() {
                 }
                 alt=""
               />
-              <img className={classes.editicon} src={editIcon} alt="" />
+              <label className={classes.fileinputlabel} htmlFor="fileinput">
+                <img className={classes.editicon} src={editIcon} alt="" />
+              </label>
+              <input
+                className={classes.fileinput}
+                id="fileinput"
+                type="file"
+                accept=".jpg, .png, .jpeg"
+                onChange={(e) => {
+                  uploadAvatar(e);
+                }}
+              />
             </div>
             <p className={classes.name}>
               {profileData.data.name || "User Full Name"}

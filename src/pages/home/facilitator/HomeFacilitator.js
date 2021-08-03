@@ -10,7 +10,7 @@ import Help from "../../help/Help";
 import Loading from "../../../components/loading/Loading";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import TokenModal from "../../../components/token_modal/TokenModal";
+import TokenModal from "../../../components/modal/token_modal/TokenModal";
 
 function HomeFacilitator() {
   const token = useSelector((state) => state.loginReducers.data?.token);

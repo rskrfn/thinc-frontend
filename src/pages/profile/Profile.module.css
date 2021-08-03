@@ -41,12 +41,17 @@
   height: 170px;
   border-radius: 100%;
 }
-.editicon {
+.fileinputlabel {
   align-self: flex-end;
+  transform: translateY(-1.5rem);
+}
+.fileinput {
+  display: none;
+}
+.editicon {
   width: 20px;
   height: 20px;
-  transform: translateY(-1.5rem);
-  z-index: 50;
+  z-index: 10;
   cursor: pointer;
 }
 .name {
@@ -55,6 +60,7 @@
   font-weight: 500;
   font-size: 26px;
   color: white;
+  cursor: default;
 }
 .optionsection {
   width: 100%;
