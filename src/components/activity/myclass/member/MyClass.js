@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 function MyClass(props) {
-  const { myclass, loading } = props;
+  const { myclass, loading, setActivitySection } = props;
   const [checked, setChecked] = useState(false);
 
   // console.log(checked);
@@ -44,10 +44,15 @@ function MyClass(props) {
           </div>
         </section>
         <section className={classes.tablecontent}>
-          <MyClassContent myclass={myclass} loading={loading} />
+          <MyClassContent myclass={myclass} loading={loading} sliced={true} />
         </section>
         <section className={classes.viewall}>
-          <div className={classes.viewallcontainer}>
+          <div
+            className={classes.viewallcontainer}
+            onClick={() => {
+              setActivitySection("myclass");
+            }}
+          >
             <p className={classes.viewalltext}>view all</p>
             <FontAwesomeIcon
               icon={faChevronRight}

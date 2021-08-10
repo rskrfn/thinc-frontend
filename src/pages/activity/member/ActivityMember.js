@@ -7,14 +7,20 @@ import { useSelector } from "react-redux";
 import "react-toastify/dist/ReactToastify.css";
 import MyClass from "../../../components/activity/myclass/member/MyClass";
 import NewClass from "../../../components/activity/newclass/NewClass";
+import AllMyClass from "../../../components/activity/myclass/member/all/AllMyClass";
 
 function ActivityMember(props) {
   const profileData = useSelector((state) => state.loginReducers.data);
+  const [activitySection, setActivitySection] = useState("main");
   const [myClass, setMyClass] = useState("");
   const [myClassLoading, setMyClassLoading] = useState(false);
   const [newClass, setNewClass] = useState("");
   const [newClassInfo, setNewClassInfo] = useState("");
   const [newClassLoading, setNewClassLoading] = useState(false);
+  const [myclassFilter, setMyClassFilter] = useState({
+    search: "",
+    sort: "",
+  });
   const [filter, setFilter] = useState({
     search: "",
     sort: "",
@@ -23,6 +29,40 @@ function ActivityMember(props) {
     price: "",
     page: "",
   });
+
+  const renderSection = () => {
+    if (activitySection === "main") {
+      return (
+        <>
+          <p className={classes.pageheader}>Activity</p>
+          <MyClass
+            myclass={myClass}
+            loading={myClassLoading}
+            setActivitySection={setActivitySection}
+          />
+          <NewClass
+            newclass={newClass}
+            loading={newClassLoading}
+            newclassinfo={newClassInfo}
+            filter={filter}
+            setFilter={setFilter}
+          />
+        </>
+      );
+    } else if (activitySection === "myclass") {
+      return (
+        <>
+          <AllMyClass
+            myclass={myClass}
+            loading={myClassLoading}
+            filter={myclassFilter}
+            setFilter={setMyClassFilter}
+            setActivitySection={setActivitySection}
+          />
+        </>
+      );
+    }
+  };
 
   const getMyClass = () => {
     setMyClassLoading(true);
@@ -45,7 +85,7 @@ function ActivityMember(props) {
         }, 1000);
       })
       .catch((err) => {
-        console.log("myclass", { err });
+        // console.log("myclass", { err });
         if (err.message === "Network Error") {
           setMyClass(null);
           setMyClassLoading(false);
@@ -80,7 +120,7 @@ function ActivityMember(props) {
     };
     axios(config)
       .then((res) => {
-        console.log("newclass", res.data);
+        // console.log("newclass", res.data);
         if (res.data?.data.result.length > 0) {
           setNewClassInfo(res.data?.data?.info);
           setNewClass(res.data?.data?.result);
@@ -91,46 +131,33 @@ function ActivityMember(props) {
       })
       .catch((err) => {
         console.log("newclass", { err });
-        // if (err.message === "Network Error") {
-        //   setMyClass(null);
-        //   setMyClassLoading(false);
-        //   // return console.log("Network Error");
-        // } else if (
-        //   err.response.data?.message ===
-        //   "Particular user doesn't have any courses"
-        // ) {
-        //   setMyClass(false);
-        // } else if (err.response.data?.message === "Data not found") {
-        //   setMyClass(false);
-        // }
-        // setTimeout(() => {
-        //   setMyClassLoading(false);
-        // }, 1000);
+        if (err.message === "Network Error") {
+          setNewClass(null);
+          // setNewClassLoading(false);
+          // return console.log("Network Error");
+        } else if (err.response.data?.message === "Data not found") {
+          setNewClass(null);
+        }
+        setTimeout(() => {
+          setNewClassLoading(false);
+        }, 1000);
       });
   };
 
   useEffect(() => {
     getMyClass();
-    getNewClass();
   }, []);
 
-  console.log("activity", newClass);
+  useEffect(() => {
+    getNewClass();
+  }, [filter]);
+
+  // console.log("activity", newClass);
   return (
     <main className={classes.maincontainer}>
       {/* <ToastContainer pauseOnFocusLoss={false} /> */}
       <div className={classes.content}>
-        <section className={classes.activity}>
-          <p className={classes.pageheader}>Activity</p>
-          <MyClass myclass={myClass} loading={myClassLoading} />
-          <NewClass
-            newclass={newClass}
-            loading={newClassLoading}
-            newclassinfo={newClassInfo}
-            filter={filter}
-            setFilter={setFilter}
-            getNewClass={getNewClass}
-          />
-        </section>
+        <section className={classes.activity}>{renderSection()}</section>
       </div>
     </main>
   );
