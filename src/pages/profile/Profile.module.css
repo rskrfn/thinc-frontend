@@ -6,6 +6,9 @@
   justify-content: center;
   align-items: center;
   min-width: 280px;
+  overflow: hidden;
+  -webkit-animation: fade-in 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in 0.5s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 .content {
   display: flex;
@@ -41,12 +44,17 @@
   height: 170px;
   border-radius: 100%;
 }
-.editicon {
+.fileinputlabel {
   align-self: flex-end;
+  transform: translateY(-1.5rem);
+}
+.fileinput {
+  display: none;
+}
+.editicon {
   width: 20px;
   height: 20px;
-  transform: translateY(-1.5rem);
-  z-index: 50;
+  z-index: 10;
   cursor: pointer;
 }
 .name {
@@ -55,12 +63,15 @@
   font-weight: 500;
   font-size: 26px;
   color: white;
+  cursor: default;
 }
 .optionsection {
   width: 100%;
+  height: calc(100% - 35% - 2rem);
   background-color: white;
   border-radius: 0 0 20px 20px;
   padding-bottom: 1rem;
+  overflow-y: scroll;
 }
 .pageheader {
   margin: 0;
@@ -113,4 +124,63 @@
 .arrowicon {
   width: 30px;
   height: 30px;
+}
+.modalcontainer {
+  position: absolute;
+  margin: 0;
+  width: calc(100% - 1rem);
+  height: calc(100% - 35% - 1.5rem);
+  -webkit-animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    -webkit-transform: translateZ(80px);
+    transform: translateZ(80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
