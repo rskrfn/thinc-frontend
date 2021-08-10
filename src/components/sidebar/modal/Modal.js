@@ -2,13 +2,16 @@ import React from "react";
 import classes from "./Modal.module.css";
 
 import { logoutAction } from "../../../redux/ActionCreators/Login";
-import { connect } from "react-redux";
+import { resetAction } from "../../../redux/ActionCreators/Page";
+import { useDispatch } from "react-redux";
 
 function Modal(props) {
   const { setModal } = props;
-
+  const dispatch = useDispatch();
   const logoutHandler = () => {
-    props.onLogoutHandler();
+    dispatch(logoutAction());
+    dispatch(resetAction());
+    return;
   };
 
   //   console.log("modal", props);
@@ -42,16 +45,4 @@ function Modal(props) {
   );
 }
 
-const mapDispatchtoProps = (dispatch) => {
-  return {
-    onLogoutHandler: () => dispatch(logoutAction()),
-  };
-};
-
-const mapStateToProps = (state) => {
-  return {
-    loginReducer: state.loginReducer,
-  };
-};
-const connectedModal = connect(mapStateToProps, mapDispatchtoProps)(Modal);
-export default connectedModal;
+export default Modal;
