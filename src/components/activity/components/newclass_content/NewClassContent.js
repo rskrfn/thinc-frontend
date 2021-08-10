@@ -6,7 +6,7 @@ import OptionIcon from "../../../../assets/icons/icon_lista.png";
 function NewClassContent(props) {
   const { newclass, loading } = props;
 
-  console.log("newclass", newclass);
+  // console.log("newclass", newclass);
   return (
     <main className={classes.maincontainer}>
       <div className={classes.content}>

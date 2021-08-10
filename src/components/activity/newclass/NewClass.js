@@ -4,10 +4,19 @@ import NewClassContent from "../components/newclass_content/NewClassContent";
 import SearchIcon from "../../../assets/icons/icon_search.png";
 
 function NewClass(props) {
-  const { newclass, loading,
-    //  newclassinfo, filter, setFilter, getNewClass 
-    } =
-    props;
+  const { newclass, loading, newclassinfo, filter, setFilter } = props;
+
+  const pageList = () => {
+    let pages = [];
+    for (let i = 1; i <= newclassinfo?.totalPage; i++) {
+      pages.push(i);
+    }
+    return pages;
+  };
+
+  const pages = pageList();
+
+  console.log({ newclassinfo });
   return (
     <main className={classes.maincontainer}>
       <div className={classes.content}>
@@ -16,46 +25,73 @@ function NewClass(props) {
           <div className={classes.searchcontainer}>
             <div className={classes.searchboxcontainer}>
               <img className={classes.searchicon} src={SearchIcon} alt="" />
-              <input className={classes.searchbox} placeholder="Quick search" />
+              <input
+                className={classes.searchbox}
+                placeholder="Quick search"
+                onChange={(e) => {
+                  setFilter({ ...filter, search: e.target.value });
+                }}
+              />
             </div>
             <button className={classes.searchbtn}>Search</button>
           </div>
           <div className={classes.filtercontainer}>
             <div className={classes.dropdowncontainer}>
-              <select className={classes.dropdown}>
-                <option value={0} selected disable hidden>
+              <select
+                className={classes.dropdown}
+                onChange={(e) => {
+                  setFilter({ ...filter, category: e.target.value });
+                }}
+              >
+                <option value={null} selected disable hidden>
                   Categories
                 </option>
-                <option value={1}>Software</option>
-                <option value={2}>History</option>
-                <option value={3}>Psychology</option>
-                <option value={4}>Finance</option>
-                <option value={5}>Mathematics</option>
-                <option value={6}>Science</option>
+                <option value={"software"}>Software</option>
+                <option value={"history"}>History</option>
+                <option value={"psychology"}>Psychology</option>
+                <option value={"finance"}>Finance</option>
+                <option value={"math"}>Mathematics</option>
+                <option value={"science"}>Science</option>
               </select>
             </div>
             <div className={classes.dropdowncontainer}>
-              <select className={classes.dropdown}>
-                <option value={0} selected disable hidden>
+              <select
+                className={classes.dropdown}
+                onChange={(e) => {
+                  setFilter({ ...filter, level: e.target.value });
+                }}
+              >
+                <option value={null} selected disable hidden>
                   Level
                 </option>
-                <option value={1}>Beginner</option>
-                <option value={2}>Intermediate</option>
-                <option value={3}>Advance</option>
+                <option value={"beginner"}>Beginner</option>
+                <option value={"intermediate"}>Intermediate</option>
+                <option value={"advance"}>Advance</option>
               </select>
             </div>
             <div className={classes.dropdowncontainer}>
-              <select className={classes.dropdown}>
-                <option value={0} selected disable hidden>
+              <select
+                className={classes.dropdown}
+                onChange={(e) => {
+                  console.log("value", e.target.value);
+                  setFilter({ ...filter, price: e.target.value });
+                }}
+              >
+                <option value={null} selected disable hidden>
                   Pricing
                 </option>
-                <option value={1}>Free</option>
-                <option value={2}>Paid</option>
+                <option value={"free"}>Free</option>
+                <option value={"paid"}>Paid</option>
               </select>
             </div>
             <div className={classes.dropdowncontainer}>
-              <select className={classes.dropdown}>
-                <option value={0} selected disable hidden>
+              <select
+                className={classes.dropdown}
+                onChange={(e) => {
+                  setFilter({ ...filter, sort: e.target.value });
+                }}
+              >
+                <option value={null} selected disable hidden>
                   Sort by
                 </option>
                 <option value="name-AZ">Name ascending</option>
@@ -68,6 +104,21 @@ function NewClass(props) {
                 <option value="level-ZA">Level descending</option>
               </select>
             </div>
+            <button
+              className={classes.clearfilterbtn}
+              onClick={() => {
+                setFilter({
+                  search: "",
+                  sort: "",
+                  category: "",
+                  level: "",
+                  price: "",
+                  page: "",
+                });
+              }}
+            >
+              Clear Filter
+            </button>
           </div>
         </section>
         <section className={classes.newclasscontainer}>
@@ -90,6 +141,60 @@ function NewClass(props) {
           </div>
           <div className={classes.contentsection}>
             <NewClassContent newclass={newclass} loading={loading} />
+          </div>
+          <div className={classes.paginationsection}>
+            <div className={classes.leftcontent}>
+              <p className={classes.paginationinfo}>{`Showing ${
+                (newclassinfo.currpage - 1) * 10 + (newclass?.length || 0)
+              } out of ${newclass ? newclassinfo?.count : 0}`}</p>
+            </div>
+            <div className={classes.rightcontent}>
+              <button
+                className={
+                  newclassinfo.prev !== null
+                    ? classes.paginationbtn
+                    : classes.paginationbtndisable
+                }
+                disabled={!newclassinfo?.prev}
+                onClick={() => {
+                  if (newclassinfo?.prev === null) return;
+                  setFilter({ ...filter, page: newclassinfo?.currpage - 1 });
+                }}
+              >
+                b
+              </button>
+              {pages.map((page, index) => {
+                return (
+                  <button
+                    className={
+                      newclassinfo?.currpage === page
+                        ? classes.paginationbtnactive
+                        : classes.paginationbtn
+                    }
+                    key={index}
+                    onClick={() => {
+                      setFilter({ ...filter, page: page });
+                    }}
+                  >
+                    {page}
+                  </button>
+                );
+              })}
+              <button
+                className={
+                  newclassinfo.next !== null
+                    ? classes.paginationbtn
+                    : classes.paginationbtndisable
+                }
+                disabled={!newclassinfo?.next}
+                onClick={() => {
+                  if (newclassinfo?.next === null) return;
+                  setFilter({ ...filter, page: newclassinfo?.currpage + 1 });
+                }}
+              >
+                n
+              </button>
+            </div>
           </div>
         </section>
       </div>
