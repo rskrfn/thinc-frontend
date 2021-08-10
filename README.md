@@ -6,6 +6,7 @@
   </a>
 
   <h3 align="center">Thinc</h3>
+  <p align="center">To be noted that this project is currently being reworked</p>
 
   <p align="center">
     This project is the front-end from our assignment of building online based class implementing React.js and Express.
