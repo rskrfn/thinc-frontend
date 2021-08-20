@@ -41,6 +41,12 @@
   </ol>
 </details>
 
+## Currently in development
+- Course detail page & Implementation
+- Help Page
+- Responsive design
+- Animation
+
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
