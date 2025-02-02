@@ -19,8 +19,6 @@ import HomeSwitch from "./services/routing/Home";
 function App() {
   const user = useSelector((state) => state.loginReducers);
 
-  React.useEffect(() => {}, [user]);
-
   return (
     <Switch>
       <PrivateRouteAuth user={user} path="/" exact child={Login} />

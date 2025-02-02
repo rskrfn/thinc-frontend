@@ -1,7 +1,7 @@
 import React from "react";
-import classes from "./NewClass.module.css";
-import NewClassContent from "../components/newclass_content/NewClassContent";
 import SearchIcon from "../../../assets/icons/icon_search.png";
+import NewClassContent from "../components/newclass_content/NewClassContent";
+import classes from "./NewClass.module.css";
 
 function NewClass(props) {
   const { newclass, loading, newclassinfo, filter, setFilter } = props;
@@ -140,7 +140,11 @@ function NewClass(props) {
             </div>
           </div>
           <div className={classes.contentsection}>
-            <NewClassContent newclass={newclass} loading={loading} />
+            <NewClassContent
+              newclass={newclass}
+              loading={loading}
+              setFilter={setFilter}
+            />
           </div>
           <div className={classes.paginationsection}>
             <div className={classes.leftcontent}>

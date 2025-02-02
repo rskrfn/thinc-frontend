@@ -1,18 +1,18 @@
+import axios from "axios";
 import React, { useState } from "react";
-import classes from "./Register.module.css";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import InputComponent from "../../../components/auth/component/input/InputComponent";
-import {
-  nameValidation,
-  usernameValidation,
-  emailValidation,
-  passwordValidation,
-} from "../../../services/validation/InputValidation";
 import googleIcon from "../../../assets/icons/icon_google.png";
+import InputComponent from "../../../components/auth/component/input/InputComponent";
 import Modal from "../../../components/auth/component/modal/Modal";
-import axios from "axios";
+import {
+  emailValidation,
+  nameValidation,
+  passwordValidation,
+  usernameValidation,
+} from "../../../services/validation/InputValidation";
+import classes from "./Register.module.css";
 function Register() {
   const [registerData, setRegisterData] = useState({
     name: "",
